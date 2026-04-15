@@ -12,7 +12,8 @@ const Navbar = () => {
         </>
     )
     return (
-        <div className="navbar bg-base-100 shadow-sm ">
+       <nav className='bg-base-100 shadow-sm'>
+         <div className="navbar container mx-auto  ">
             <div className="flex-1 ">
                 <a className="font-bold text-xl">Keen<span className='text-[#244D3F] font-semibold'>Keeper</span></a>
             </div>
@@ -20,6 +21,7 @@ const Navbar = () => {
                 {menuItems}
             </div>
         </div>
+       </nav>
     );
 };
 
