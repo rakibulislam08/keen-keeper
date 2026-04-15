@@ -2,7 +2,7 @@
   {
     "id": 1,
     "name": "John Doe",
-    "picture": "https://example.com/photo1.jpg",
+    "picture": "https://randomuser.me/api/portraits/men/1.jpg",
     "email": "john@example.com",
     "days_since_contact": 12,
     "status": "overdue",
@@ -14,7 +14,7 @@
   {
     "id": 2,
     "name": "Sarah Khan",
-    "picture": "https://example.com/photo2.jpg",
+    "picture": "https://randomuser.me/api/portraits/women/2.jpg",
     "email": "sarah@example.com",
     "days_since_contact": 3,
     "status": "ok",
@@ -26,7 +26,7 @@
   {
     "id": 3,
     "name": "Ali Hassan",
-    "picture": "https://example.com/photo3.jpg",
+    "picture": "https://randomuser.me/api/portraits/men/3.jpg",
     "email": "ali@example.com",
     "days_since_contact": 20,
     "status": "overdue",
@@ -38,7 +38,7 @@
   {
     "id": 4,
     "name": "Maria Rossi",
-    "picture": "https://example.com/photo4.jpg",
+    "picture": "https://randomuser.me/api/portraits/women/4.jpg",
     "email": "maria@example.com",
     "days_since_contact": 5,
     "status": "ok",
@@ -50,7 +50,7 @@
   {
     "id": 5,
     "name": "Rahim Uddin",
-    "picture": "https://example.com/photo5.jpg",
+    "picture": "https://randomuser.me/api/portraits/men/5.jpg",
     "email": "rahim@example.com",
     "days_since_contact": 15,
     "status": "overdue",
@@ -62,7 +62,7 @@
   {
     "id": 6,
     "name": "Fatima Noor",
-    "picture": "https://example.com/photo6.jpg",
+    "picture": "https://randomuser.me/api/portraits/women/6.jpg",
     "email": "fatima@example.com",
     "days_since_contact": 1,
     "status": "ok",
@@ -74,7 +74,7 @@
   {
     "id": 7,
     "name": "David Smith",
-    "picture": "https://example.com/photo7.jpg",
+    "picture": "https://randomuser.me/api/portraits/men/7.jpg",
     "email": "david@example.com",
     "days_since_contact": 30,
     "status": "overdue",
@@ -86,7 +86,7 @@
   {
     "id": 8,
     "name": "Nusrat Jahan",
-    "picture": "https://example.com/photo8.jpg",
+    "picture": "https://randomuser.me/api/portraits/women/8.jpg",
     "email": "nusrat@example.com",
     "days_since_contact": 6,
     "status": "ok",
@@ -98,7 +98,7 @@
   {
     "id": 9,
     "name": "Ahmed Raza",
-    "picture": "https://example.com/photo9.jpg",
+    "picture": "https://randomuser.me/api/portraits/men/9.jpg",
     "email": "ahmed@example.com",
     "days_since_contact": 18,
     "status": "overdue",
@@ -110,7 +110,7 @@
   {
     "id": 10,
     "name": "Elena Petrova",
-    "picture": "https://example.com/photo10.jpg",
+    "picture": "https://randomuser.me/api/portraits/women/10.jpg",
     "email": "elena@example.com",
     "days_since_contact": 4,
     "status": "ok",
@@ -122,7 +122,7 @@
   {
     "id": 11,
     "name": "Imran Sheikh",
-    "picture": "https://example.com/photo11.jpg",
+    "picture": "https://randomuser.me/api/portraits/men/11.jpg",
     "email": "imran@example.com",
     "days_since_contact": 25,
     "status": "overdue",
@@ -134,7 +134,7 @@
   {
     "id": 12,
     "name": "Sophia Lee",
-    "picture": "https://example.com/photo12.jpg",
+    "picture": "https://randomuser.me/api/portraits/women/12.jpg",
     "email": "sophia@example.com",
     "days_since_contact": 2,
     "status": "ok",

@@ -12,7 +12,7 @@ const AllCards = () => {
         <div className='container mx-auto '>
             <h3 className='font-semibold text-xl pt-15'>Your Friends</h3>
 
-            <div>
+            <div className='grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-4 mt-10'>
                 {
                     friends.map(((friend,ind) => {
                         return (
