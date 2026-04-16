@@ -7,6 +7,7 @@ import MainLayout from './layout/MainLayout'
 import HomePage from './pages/HomePage/HomePage'
 import CardDetails from './pages/CardDetails/CardDetails'
 import Stats from './pages/Stats/Stats'
+import TimeLine from './pages/TimeLine/TimeLine'
 
 
 const router = createBrowserRouter([
@@ -17,10 +18,6 @@ const router = createBrowserRouter([
       {
         index: true,
         Component: HomePage
-      },
-      {
-        path: '/card',
-        Component: CardDetails 
       },
       {
         path: '/stats',

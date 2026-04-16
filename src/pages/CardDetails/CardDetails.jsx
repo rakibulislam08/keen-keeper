@@ -1,44 +1,53 @@
 import React from 'react';
+import { FaVideo } from 'react-icons/fa';
+import { FiPhoneCall } from 'react-icons/fi';
 import { HiBellSnooze } from 'react-icons/hi2';
+import { IoVideocamOutline } from 'react-icons/io5';
+import { MdOutlineTextsms } from 'react-icons/md';
 import { RiDeleteBin6Line, RiInboxArchiveLine } from 'react-icons/ri';
 import { useLoaderData, useParams } from 'react-router';
 
+
+
+
 const CardDetails = () => {
     const { friendId } = useParams();
-    // console.log(friendId);
+    console.log(friendId);
 
     const friends = useLoaderData();
-    // console.log(friends);
+    console.log(friends);
 
-    const singleFriend = friends.find(friend => friend.friendId == friend.friendId);
-    // console.log(singleFriend);
+    const SingleFriend = friends.find(friend => friend.id === parseInt(friendId));
+    // console.log(SingleFriend);
+
     const {
-        name,
         picture,
         status,
         tags,
         bio,
         email,
-        days_since_contact,
+        name,
+        goal,
         next_due_date,
-    } = singleFriend;
-
+        days_since_contact
+    } = SingleFriend;
 
     return (
-        <div className='container mx-auto mt-20 flex gap-10'>
-            <div className=' w-[300px]'>
+
+        <div className='container mx-auto p-15 mt-5 flex gap-10'>
+            <div className=' w-[320px]'>
                 <div className="card bg-base-100  h-[380px] shadow-sm items-center">
-                   
+                    <figure>
                         <img className='ring-primary  ring-offset-base-100   rounded-full'
                             src={picture} />
-                  
+                    </figure>
                     <div className="card-body items-center">
                         <h2 className="card-title">
-
+                            {name}
                         </h2>
                         <div className="badge badge-secondary">{status}</div>
                         {
-                            singleFriend.tags.map((tag, id) =>
+                            tags.map((tag, id) =>
                                 <div key={id} className="badge badge-soft badge-success">{tags}</div>
                             )
                         }
@@ -59,7 +68,7 @@ const CardDetails = () => {
                         <div className="text-gray-500">Days Since Contact</div>
                     </div>
                     <div className="shadow rounded-xl p-10 items-center text-center">
-                        <div className="text-[#244D3F]  text-3xl font-bold ">{days_since_contact}</div>
+                        <div className="text-[#244D3F]  text-3xl font-bold ">{goal}</div>
                         <div className="text-gray-500">Goal</div>
                     </div>
                     <div className="shadow rounded-xl p-10 items-center text-center">
@@ -79,10 +88,32 @@ const CardDetails = () => {
                     <kbd className="kbd">Edit</kbd>
                 </div>
 
+                <div>
+                    <p className='mt-15  text-2xl font-semibold'>Quick Check-In</p>
+
+
+                    <div className='grid grid-cols-3 gap-6  mt-10'>
+                        <div className='shadow rounded-xl p-10 mx-auto w-[250px] text-center cursor-pointer'>
+                            <FiPhoneCall  className='text-3xl mx-auto mb-2 '/>
+                            <p className='text-gray-600 font-semibold'>Calls</p>
+                        </div>
+                        <div className='shadow rounded-xl p-10 mx-auto w-[250px] text-center cursor-pointer'>
+                            <MdOutlineTextsms  className='text-3xl mx-auto mb-2 '/>
+                            <p className='text-gray-600 font-semibold'>Text</p>
+                        </div>
+                        <div className='shadow rounded-xl p-10 mx-auto w-[250px] text-center cursor-pointer'>
+                            <IoVideocamOutline  className='text-3xl mx-auto mb-2 '/>
+                            <p className='text-gray-600 font-semibold'>Video</p>
+                        </div>
+                        
+
+                    </div>
+                </div>
+
 
             </div>
         </div>
-    )
+    );
 };
 
 export default CardDetails;
