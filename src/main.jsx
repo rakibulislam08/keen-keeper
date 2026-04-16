@@ -6,8 +6,8 @@ import { RouterProvider } from 'react-router/dom'
 import MainLayout from './layout/MainLayout'
 import HomePage from './pages/HomePage/HomePage'
 import CardDetails from './pages/CardDetails/CardDetails'
-import Stats from './pages/Stats/Stats'
 import TimeLine from './pages/TimeLine/TimeLine'
+import Stats from './pages/Stats/Stats'
 
 
 const router = createBrowserRouter([
@@ -18,6 +18,10 @@ const router = createBrowserRouter([
       {
         index: true,
         Component: HomePage
+      },
+      {
+        path: '/timeline',
+        Component: TimeLine
       },
       {
         path: '/stats',
@@ -35,5 +39,6 @@ const router = createBrowserRouter([
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <RouterProvider router={router}/>
+    
   </StrictMode>,
 )

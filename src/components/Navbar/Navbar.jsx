@@ -7,13 +7,11 @@ import { Link, NavLink } from 'react-router';
 const Navbar = () => {
     const menuItems = (
         <>
-            
-                <NavLink to={'/'}
-                    className= {({ isActive }) => `flex items-center gap-1 ${isActive ? "bg-[#244D3F] text-white px-4 py-2 rounded-lg" : ""}`}>
-                    <FaHome />Home </NavLink>
-           
-            <NavLink to={'/card'} className= {({ isActive }) => `flex items-center gap-1 ${isActive ? "bg-[#244D3F] text-white px-4 py-2 rounded-lg" : ""}`}><RiTimeLine />Timeline</NavLink>
-            <NavLink to={'/stats'} className= {({ isActive }) => `flex items-center gap-1 ${isActive ? "bg-[#244D3F] text-white px-4 py-2 rounded-lg" : ""}`}><TfiStatsUp />Stats</NavLink>
+
+            <NavLink to={'/'}
+                className={({ isActive }) => `flex items-center gap-1 ${isActive ? "bg-[#244D3F] text-white px-4 py-2 rounded-lg" : ""}`}> <FaHome />Home </NavLink>
+            <NavLink to={'/timeline'} className={({ isActive }) => `flex items-center gap-1 ${isActive ? "bg-[#244D3F] text-white px-4 py-2 rounded-lg" : ""}`}><RiTimeLine />Timeline</NavLink>
+            <NavLink to={'/stats'} className={({ isActive }) => `flex items-center gap-1 ${isActive ? "bg-[#244D3F] text-white px-4 py-2 rounded-lg" : ""}`}><TfiStatsUp />Stats</NavLink>
         </>
     )
     return (

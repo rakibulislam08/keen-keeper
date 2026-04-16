@@ -1,21 +1,21 @@
-import React from 'react';
+import React, { useState, useContext } from 'react';
 import { FaVideo } from 'react-icons/fa';
 import { FiPhoneCall } from 'react-icons/fi';
 import { HiBellSnooze } from 'react-icons/hi2';
 import { IoVideocamOutline } from 'react-icons/io5';
 import { MdOutlineTextsms } from 'react-icons/md';
 import { RiDeleteBin6Line, RiInboxArchiveLine } from 'react-icons/ri';
-import { useLoaderData, useParams } from 'react-router';
-
-
-
+import { Link, useLoaderData, useParams } from 'react-router';
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import { TimelineContext } from '../../context/TimelineContext';
 
 const CardDetails = () => {
     const { friendId } = useParams();
-    console.log(friendId);
+    // console.log(friendId);
 
     const friends = useLoaderData();
-    console.log(friends);
+    // console.log(friends);
 
     const SingleFriend = friends.find(friend => friend.id === parseInt(friendId));
     // console.log(SingleFriend);
@@ -31,6 +31,19 @@ const CardDetails = () => {
         next_due_date,
         days_since_contact
     } = SingleFriend;
+
+    const { timeline, addActivity } = useContext(TimelineContext);
+
+    const handleInteraction = (type) => {
+        addActivity(type);
+        
+        const typeLabel = type.charAt(0).toUpperCase() + type.slice(1);
+        toast.success(`${typeLabel} activity added!`, {
+            position: "top-right",
+            autoClose: 2000
+        });
+    }
+
 
     return (
 
@@ -56,9 +69,9 @@ const CardDetails = () => {
                     </div>
                 </div>
                 <div className='grid grid-row-3 mt-15 space-y-6'>
-                    <button class="btn"> <HiBellSnooze />Snooze 2 weeks</button>
-                    <button class="btn"> <RiInboxArchiveLine />Archive</button>
-                    <button class="btn"> <RiDeleteBin6Line />Delete</button>
+                    <button className='btn'> <HiBellSnooze />Snooze 2 weeks</button>
+                    <button className='btn'> <RiInboxArchiveLine />Archive</button>
+                    <button className='btn'> <RiDeleteBin6Line />Delete</button>
                 </div>
             </div>
             <div>
@@ -92,24 +105,30 @@ const CardDetails = () => {
                     <p className='mt-15  text-2xl font-semibold'>Quick Check-In</p>
 
 
-                    <div className='grid grid-cols-3 gap-6  mt-10'>
-                        <div className='shadow rounded-xl p-10 mx-auto w-[250px] text-center cursor-pointer'>
-                            <FiPhoneCall  className='text-3xl mx-auto mb-2 '/>
+                    <div className='grid grid-cols-1 lg:grid-cols-3 gap-6  mt-10'>
+                        <button onClick={() => handleInteraction('call')}
+                        className='shadow rounded-xl p-10 mx-auto w-[250px] text-center cursor-pointer'>
+                            <FiPhoneCall className='text-3xl mx-auto mb-2 ' />
                             <p className='text-gray-600 font-semibold'>Calls</p>
-                        </div>
-                        <div className='shadow rounded-xl p-10 mx-auto w-[250px] text-center cursor-pointer'>
-                            <MdOutlineTextsms  className='text-3xl mx-auto mb-2 '/>
+                        </button>
+                        <button
+                        onClick={() => handleInteraction('text')}
+                         className='shadow rounded-xl p-10 mx-auto w-[250px] text-center cursor-pointer'>
+                            <MdOutlineTextsms className='text-3xl mx-auto mb-2 ' />
                             <p className='text-gray-600 font-semibold'>Text</p>
-                        </div>
-                        <div className='shadow rounded-xl p-10 mx-auto w-[250px] text-center cursor-pointer'>
-                            <IoVideocamOutline  className='text-3xl mx-auto mb-2 '/>
+                        </button>
+                        <button 
+                        onClick={() => handleInteraction("video")}
+                        className=' shadow rounded-xl p-10 mx-auto w-[250px] text-center cursor-pointer'>
+                            <IoVideocamOutline className='text-3xl mx-auto mb-2 ' />
                             <p className='text-gray-600 font-semibold'>Video</p>
-                        </div>
-                        
+                        </button>
+
 
                     </div>
                 </div>
 
+               
 
             </div>
         </div>
