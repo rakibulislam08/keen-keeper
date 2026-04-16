@@ -1,9 +1,10 @@
 import React from 'react';
+import { Link } from 'react-router';
 
 const Cards = (friend) => {
     return (
 
-        <div className="card bg-base-100 w-[250] shadow-sm items-center" >
+        <Link to={`/cardDetails/${friend.friend.id}`} className="card bg-base-100 w-[250] shadow-sm items-center" >
             <div className='avatar'>
                 <figure>
                     <img className="ring-primary  ring-offset-base-100 w-24 h-24 rounded-full "
@@ -23,9 +24,9 @@ const Cards = (friend) => {
                     }
                 </div>
 
-                <div className="badge badge-warning mt-3">{friend.friend.status}</div>  
+                <div className="badge badge-warning mt-3">{friend.friend.status}</div>
             </div>
-        </div>
+        </Link>
 
     );
 };

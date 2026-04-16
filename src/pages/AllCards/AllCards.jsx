@@ -5,7 +5,7 @@ const allFriends = fetch("/friends.json").then((res) => res.json());
 
 const AllCards = () => {
     const friends = use(allFriends);
-    console.log(friends);
+    // console.log(friends);
 
 
     return (
