@@ -1,4 +1,5 @@
 import React from 'react';
+import { FiPlus } from 'react-icons/fi';
 
 const Banner = () => {
     return (
@@ -13,7 +14,7 @@ const Banner = () => {
                             <br />
                             relationships that matter most.
                         </p>
-                        <button className="btn bg-[#244D3F] text-white">Add a Friend</button>
+                        <button className="btn bg-[#244D3F] text-white"><FiPlus />Add a Friend</button>
                     </div>
                 </div>
             </div>
