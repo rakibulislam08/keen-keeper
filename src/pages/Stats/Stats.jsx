@@ -2,8 +2,8 @@ import React from 'react';
 
 const Stats = () => {
     return (
-        <div>
-         stats page
+        <div className='container mx-auto'>
+         <h1 className='text-3xl font-bold mt-10'>Friendship Analytics</h1>
         </div>
     );
 };
