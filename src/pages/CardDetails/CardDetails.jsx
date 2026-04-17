@@ -47,89 +47,81 @@ const CardDetails = () => {
 
     return (
 
-        <div className='container mx-auto p-15 mt-5 flex gap-10'>
-            <div className=' w-[320px]'>
-                <div className="card bg-base-100  h-[380px] shadow-sm items-center">
+        <div className='container mx-auto px-3 sm:px-4 md:px-6 lg:px-8 py-6 sm:py-8 md:py-12 lg:py-15 mt-4 sm:mt-5 flex flex-col lg:flex-row gap-6 sm:gap-8 md:gap-10 lg:gap-12'>
+            <div className='w-full sm:w-80 md:w-96 lg:w-80 flex-shrink-0'>
+                <div className="card bg-base-100 h-auto sm:h-96 md:h-[420px] lg:h-[380px] shadow-sm items-center p-4 sm:p-5 md:p-6">
                     <figure>
-                        <img className='ring-primary  ring-offset-base-100   rounded-full'
+                        <img className='ring-primary ring-offset-base-100 rounded-full w-32 sm:w-40 md:w-48 lg:w-40 h-32 sm:h-40 md:h-48 lg:h-40 object-cover'
                             src={picture} />
                     </figure>
-                    <div className="card-body items-center">
-                        <h2 className="card-title">
+                    <div className="card-body items-center text-center p-3 sm:p-4 md:p-5">
+                        <h2 className="card-title text-base sm:text-lg md:text-xl">
                             {name}
                         </h2>
-                        <div className="badge badge-secondary">{status}</div>
+                        <div className="badge badge-secondary text-xs sm:text-sm">{status}</div>
+                        <div className='flex flex-wrap gap-1 sm:gap-2 justify-center'>
                         {
                             tags.map((tag, id) =>
-                                <div key={id} className="badge badge-soft badge-success">{tags}</div>
+                                <div key={id} className="badge badge-soft badge-success text-xs sm:text-sm">{tag}</div>
                             )
                         }
-                        <p className='text-semibold text-gray-400'>{bio}</p>
-                        <p className='text-sm text-gray-400'>Preferred:{email}</p>
+                        </div>
+                        <p className='text-xs sm:text-sm text-gray-400 line-clamp-2'>{bio}</p>
+                        <p className='text-xs sm:text-sm text-gray-400'>Preferred:{email}</p>
                     </div>
                 </div>
-                <div className='grid grid-row-3 mt-15 space-y-6'>
-                    <button className='btn'> <HiBellSnooze />Snooze 2 weeks</button>
-                    <button className='btn'> <RiInboxArchiveLine />Archive</button>
-                    <button className='btn'> <RiDeleteBin6Line />Delete</button>
+                <div className='grid grid-cols-1 gap-2 sm:gap-3 md:gap-4 lg:gap-3 mt-6 sm:mt-8 md:mt-12 lg:mt-15'>
+                    <button className='btn btn-sm sm:btn-md text-xs sm:text-sm'> <HiBellSnooze />Snooze 2 weeks</button>
+                    <button className='btn btn-sm sm:btn-md text-xs sm:text-sm'> <RiInboxArchiveLine />Archive</button>
+                    <button className='btn btn-sm sm:btn-md text-xs sm:text-sm'> <RiDeleteBin6Line />Delete</button>
                 </div>
             </div>
-            <div>
-                <div className="grid grid-cols-1 lg:grid-cols-3 gap-10  ">
-                    <div className="shadow rounded-xl p-10 items-center text-center">
-                        <div className="text-[#244D3F]  text-3xl font-bold ">{days_since_contact}</div>
-                        <div className="text-gray-500">Days Since Contact</div>
+            <div className='flex-1 w-full'>
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5 md:gap-6 lg:gap-8">
+                    <div className="shadow rounded-xl p-4 sm:p-6 md:p-8 lg:p-10 items-center text-center">
+                        <div className="text-[#244D3F] text-2xl sm:text-3xl md:text-4xl lg:text-3xl font-bold">{days_since_contact}</div>
+                        <div className="text-gray-500 text-xs sm:text-sm md:text-base">Days Since Contact</div>
                     </div>
-                    <div className="shadow rounded-xl p-10 items-center text-center">
-                        <div className="text-[#244D3F]  text-3xl font-bold ">{goal}</div>
-                        <div className="text-gray-500">Goal</div>
+                    <div className="shadow rounded-xl p-4 sm:p-6 md:p-8 lg:p-10 items-center text-center">
+                        <div className="text-[#244D3F] text-2xl sm:text-3xl md:text-4xl lg:text-3xl font-bold">{goal}</div>
+                        <div className="text-gray-500 text-xs sm:text-sm md:text-base">Goal</div>
                     </div>
-                    <div className="shadow rounded-xl p-10 items-center text-center">
-                        <div className="text-[#244D3F]  text-3xl font-bold ">{next_due_date
-                        }</div>
-                        <div className="text-gray-500">Next Due Date</div>
+                    <div className="shadow rounded-xl p-4 sm:p-6 md:p-8 lg:p-10 items-center text-center">
+                        <div className="text-[#244D3F] text-2xl sm:text-3xl md:text-4xl lg:text-3xl font-bold">{next_due_date}</div>
+                        <div className="text-gray-500 text-xs sm:text-sm md:text-base">Next Due Date</div>
                     </div>
-
                 </div>
-                <div className='shadow rounded-xl mt-10 p-5 flex justify-between'>
-
+                <div className='shadow rounded-xl mt-6 sm:mt-8 md:mt-10 lg:mt-12 p-4 sm:p-5 md:p-6 lg:p-8 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 sm:gap-6'>
                     <div>
-                        <p className='text-[#244D3F] text-xl font-semibold pb-5'>Relationship Goal</p>
-                        <p className='text-xl font-semibold'><small className='text-gray-500 text-xl font-semibold'>Connect every</small> 30 days</p>
+                        <p className='text-[#244D3F] text-base sm:text-lg md:text-xl font-semibold pb-2 sm:pb-3 md:pb-5'>Relationship Goal</p>
+                        <p className='text-base sm:text-lg md:text-xl font-semibold'><small className='text-gray-500 text-xs sm:text-sm md:text-base font-semibold'>Connect every</small> 30 days</p>
                     </div>
-
-                    <kbd className="kbd">Edit</kbd>
+                    <kbd className="kbd text-xs sm:text-sm">Edit</kbd>
                 </div>
 
                 <div>
-                    <p className='mt-15  text-2xl font-semibold'>Quick Check-In</p>
+                    <p className='mt-6 sm:mt-8 md:mt-10 lg:mt-12 text-lg sm:text-xl md:text-2xl lg:text-3xl font-semibold'>Quick Check-In</p>
 
-
-                    <div className='grid grid-cols-1 lg:grid-cols-3 gap-6  mt-10'>
+                    <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4 md:gap-5 lg:gap-6 mt-6 sm:mt-8 md:mt-10 lg:mt-12'>
                         <button onClick={() => handleInteraction('call')}
-                        className='shadow rounded-xl p-10 mx-auto w-[250px] text-center cursor-pointer'>
-                            <FiPhoneCall className='text-3xl mx-auto mb-2 ' />
-                            <p className='text-gray-600 font-semibold'>Calls</p>
+                        className='shadow rounded-xl p-6 sm:p-8 md:p-10 text-center cursor-pointer hover:shadow-md transition-shadow'>
+                            <FiPhoneCall className='text-2xl sm:text-3xl mx-auto mb-2 sm:mb-3' />
+                            <p className='text-gray-600 font-semibold text-xs sm:text-sm md:text-base'>Calls</p>
                         </button>
                         <button
                         onClick={() => handleInteraction('text')}
-                         className='shadow rounded-xl p-10 mx-auto w-[250px] text-center cursor-pointer'>
-                            <MdOutlineTextsms className='text-3xl mx-auto mb-2 ' />
-                            <p className='text-gray-600 font-semibold'>Text</p>
+                         className='shadow rounded-xl p-6 sm:p-8 md:p-10 text-center cursor-pointer hover:shadow-md transition-shadow'>
+                            <MdOutlineTextsms className='text-2xl sm:text-3xl mx-auto mb-2 sm:mb-3' />
+                            <p className='text-gray-600 font-semibold text-xs sm:text-sm md:text-base'>Text</p>
                         </button>
                         <button 
                         onClick={() => handleInteraction("video")}
-                        className=' shadow rounded-xl p-10 mx-auto w-[250px] text-center cursor-pointer'>
-                            <IoVideocamOutline className='text-3xl mx-auto mb-2 ' />
-                            <p className='text-gray-600 font-semibold'>Video</p>
+                        className='shadow rounded-xl p-6 sm:p-8 md:p-10 text-center cursor-pointer hover:shadow-md transition-shadow'>
+                            <IoVideocamOutline className='text-2xl sm:text-3xl mx-auto mb-2 sm:mb-3' />
+                            <p className='text-gray-600 font-semibold text-xs sm:text-sm md:text-base'>Video</p>
                         </button>
-
-
                     </div>
                 </div>
-
-               
-
             </div>
         </div>
     );

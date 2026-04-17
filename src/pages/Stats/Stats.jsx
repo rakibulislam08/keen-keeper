@@ -19,33 +19,58 @@ const Stats = () => {
     ];
 
     return (
-        <div className='container mx-auto'>
-            <h1 className='text-3xl font-bold mt-10'>Friendship Analytics</h1>
+        <div className='container mx-auto px-3 sm:px-4 md:px-6 lg:px-8'>
+            <h1 className='text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold mt-6 sm:mt-8 md:mt-10 lg:mt-12'>Friendship Analytics</h1>
 
-            <div className='mt-10 shadow rounded-md p-5 border border-slate-300'>
-                <p className='mb-10 text-[#244D3F] font-semibold'>By Interaction Type</p>
-                <PieChart className='' style={{
-                    width: '100%',
-                    maxWidth: '500px',
-                    maxHeight: '80vh',
-                    aspectRatio: 1,
-                    margin: ' auto',
-                }} responsive >
-                    <Pie
-                        data={data}
-                        innerRadius="80%"
-                        outerRadius="100%"
-                        // Corner radius is the rounded edge of each pie slice
-                        cornerRadius="50%"
-                        fill="#8884d8"
-                        // padding angle is the gap between each pie slice
-                        paddingAngle={5}
-                        dataKey="value"
-                        isAnimationActive={true}
-                    />
-                    <Legend />
-                    <Tooltip/>
-                </PieChart>
+            <div className='mt-6 sm:mt-8 md:mt-10 lg:mt-12 shadow rounded-md p-4 sm:p-5 md:p-6 lg:p-8 border border-slate-300'>
+                <p className='mb-6 sm:mb-8 md:mb-10 text-[#244D3F] font-semibold text-sm sm:text-base md:text-lg'>By Interaction Type</p>
+                <div className='flex justify-center w-full overflow-x-auto'>
+                    <PieChart style={{
+                        width: '100%',
+                        maxWidth: '280px',
+                        height: '280px',
+                        minWidth: '200px'
+                    }} 
+                    responsive={true}
+                    margin={{ top: 10, right: 10, bottom: 10, left: 10 }}
+                    >
+                        <Pie
+                            data={data}
+                            innerRadius="60%"
+                            outerRadius="80%"
+                            cornerRadius="50%"
+                            fill="#8884d8"
+                            paddingAngle={5}
+                            dataKey="value"
+                            isAnimationActive={true}
+                        />
+                        <Legend />
+                        <Tooltip/>
+                    </PieChart>
+                </div>
+                <div className='hidden sm:block'>
+                    <PieChart style={{
+                        width: '100%',
+                        maxWidth: '500px',
+                        height: '400px',
+                    }} 
+                    responsive={true}
+                    margin={{ top: 20, right: 20, bottom: 20, left: 20 }}
+                    >
+                        <Pie
+                            data={data}
+                            innerRadius="80%"
+                            outerRadius="100%"
+                            cornerRadius="50%"
+                            fill="#8884d8"
+                            paddingAngle={5}
+                            dataKey="value"
+                            isAnimationActive={true}
+                        />
+                        <Legend />
+                        <Tooltip/>
+                    </PieChart>
+                </div>
             </div>
         </div>
     );

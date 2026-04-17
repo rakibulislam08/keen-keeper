@@ -15,12 +15,12 @@ const Navbar = () => {
         </>
     )
     return (
-        <nav className='bg-base-100 shadow-sm'>
-            <div className="navbar container mx-auto  ">
-                <div className="flex-1 ">
-                    <a className="font-bold text-xl">Keen<span className='text-[#244D3F] font-semibold'>Keeper</span></a>
+        <nav className='bg-base-100 shadow-sm sticky top-0 z-50'>
+            <div className="navbar container mx-auto px-3 sm:px-4 md:px-6 lg:px-8">
+                <div className="flex-1">
+                    <a className="font-bold text-lg sm:text-xl md:text-2xl">Keen<span className='text-[#244D3F] font-semibold'>Keeper</span></a>
                 </div>
-                <div className="flex space-x-2    rounded-lg px-4 py-2">
+                <div className=" grid gap-1 sm:grid-rows-1 md:grid-cols-1 lg:grid-cols-3 rounded-lg px-2 sm:px-3 md:px-4 py-2 text-xs sm:text-sm md:text-base">
                     {menuItems}
                 </div>
             </div>
