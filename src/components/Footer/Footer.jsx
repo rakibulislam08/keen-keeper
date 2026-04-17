@@ -3,7 +3,7 @@ import { FaFacebook, FaInstagram, FaSquareXTwitter } from 'react-icons/fa6';
 
 const Footer = () => {
     return (
-        <div className='mx-auto'>
+        <div className='mx-auto mt-10'>
             <footer className="footer   bg-[#244D3F] p-10">
                 <div className='container mx-auto flex flex-col   gap-4 justify-center text-center items-center'>
                     <h1 className='lg:text-5xl font-bold sm:text-sm text-white'>KeenKeeper</h1>
