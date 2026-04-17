@@ -24,7 +24,7 @@ const Stats = () => {
 
             <div className='mt-6 sm:mt-8 md:mt-10 lg:mt-12 shadow rounded-md p-4 sm:p-5 md:p-6 lg:p-8 border border-slate-300'>
                 <p className='mb-6 sm:mb-8 md:mb-10 text-[#244D3F] font-semibold text-sm sm:text-base md:text-lg'>By Interaction Type</p>
-                <div className='flex justify-center w-full overflow-x-auto'>
+                <div className='flex lg:hidden text-center items-center justify-center w-full overflow-x-auto'>
                     <PieChart style={{
                         width: '100%',
                         maxWidth: '280px',
@@ -48,7 +48,7 @@ const Stats = () => {
                         <Tooltip/>
                     </PieChart>
                 </div>
-                <div className='hidden sm:block'>
+                <div className='hidden sm:block' >
                     <PieChart style={{
                         width: '100%',
                         maxWidth: '500px',
